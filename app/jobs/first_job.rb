@@ -1,7 +1,7 @@
 class FirstJob < ActiveJob::Base
-  # queue_as :default
+   queue_as :default
 
-  def perform(obj)
-    puts obj
+  def perform()
+    puts "hello"
   end
 end

@@ -4,13 +4,15 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    FirstJob.delay.perform_later()
+    PdfJob.perform_later()
+     #FirstJob.perform_later()
     @posts = Post.all
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    #SendNewFeedbackNotificationJob.perform_later(@post_id)
   end
 
   # GET /posts/new
